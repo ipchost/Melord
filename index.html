@@ -2,205 +2,160 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeLord IPTV — Официальный сайт партнера. Плейлист за 2$ и Тест 24ч</title>
-    <meta name="description" content="Подключайте надежное IPTV MeLord (iLook TV) всего за 2 доллара в месяц. Более 10000 каналов, архив 7 дней. Бесплатный тест 24 часа доступен сразу после регистрации!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MeLord IPTV — 4500+ каналов за 2$. Бесплатный тест 24 часа!</title>
+    <meta name="description" content="Официальное подключение MeLord IPTV. Более 4500 каналов в Full HD. Архив, стабильный сигнал, тест 24 часа бесплатно. Лучшее ТВ для РФ и СНГ.">
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         :root {
-            --blue: #0056b3;
-            --light-blue: #e7f1ff;
-            --orange: #ff6600;
-            --text-dark: #333;
-            --text-light: #666;
-            --white: #ffffff;
-            --bg-gray: #f8f9fa;
+            --primary: #0066ff;
+            --secondary: #ff5500;
+            --dark: #1a1a1c;
+            --light: #f4f7fa;
+            --success: #28a745;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--bg-gray); color: var(--text-dark); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Manrope', sans-serif; background-color: var(--light); color: var(--dark); line-height: 1.5; }
 
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 15px; }
+        .container { max-width: 600px; margin: 0 auto; padding: 0 20px; }
 
-        /* Шапка */
-        header { background: var(--white); padding: 15px 0; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
-        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 26px; font-weight: 700; color: var(--blue); text-decoration: none; }
-        .logo span { color: var(--orange); }
+        /* Mobile Header */
+        header { background: #fff; padding: 15px 0; border-bottom: 1px solid #e1e8ef; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 22px; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -1px; }
+        .logo span { color: var(--secondary); }
 
-        /* Главный блок */
-        .hero { background: linear-gradient(135deg, #fff 0%, #f0f4f8 100%); padding: 60px 0; border-bottom: 1px solid #eee; }
-        .hero-flex { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-text h1 { font-size: 36px; line-height: 1.2; margin-bottom: 20px; color: #1a1a1a; }
-        .hero-text mark { background: var(--orange); color: #fff; padding: 0 5px; }
+        /* Hero Section */
+        .hero { background: #fff; padding: 40px 0 30px; text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .badge { background: var(--light); color: var(--primary); padding: 6px 15px; border-radius: 50px; font-size: 13px; font-weight: 700; display: inline-block; margin-bottom: 15px; border: 1px solid #d0e0ff; }
+        h1 { font-size: 28px; font-weight: 800; line-height: 1.2; margin-bottom: 15px; padding: 0 10px; }
+        h1 mark { background: none; color: var(--primary); }
+        .hero p { color: #666; font-size: 16px; margin-bottom: 25px; }
+
+        /* Основная кнопка */
+        .btn { display: block; background: var(--secondary); color: #fff; padding: 20px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 18px; text-align: center; transition: 0.3s; box-shadow: 0 8px 20px rgba(255, 85, 0, 0.3); }
+        .btn:active { transform: scale(0.98); }
+
+        /* Счётчик теста */
+        .test-timer { margin-top: 15px; font-size: 13px; color: var(--success); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .dot { height: 8px; width: 8px; background: var(--success); border-radius: 50%; animation: blink 1s infinite; }
+
+        /* Сетка каналов */
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 30px 0; }
+        .stat-card { background: #fff; padding: 20px; border-radius: 20px; text-align: center; border: 1px solid #eee; }
+        .stat-card div { font-size: 24px; font-weight: 800; color: var(--primary); }
+        .stat-card span { font-size: 12px; color: #888; text-transform: uppercase; font-weight: 600; }
+
+        /* Список преимуществ */
+        .benefits { margin: 40px 0; }
+        .benefit-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 15px; }
+        .benefit-item i { color: var(--primary); font-size: 20px; margin-top: 3px; }
+        .benefit-item h4 { font-size: 16px; margin-bottom: 2px; }
+        .benefit-item p { font-size: 14px; color: #777; }
+
+        /* Плашка с оплатой */
+        .payments { text-align: center; padding: 20px 0; opacity: 0.6; }
+        .payments i { font-size: 30px; margin: 0 10px; }
+
+        /* Липкая кнопка (Sticky) */
+        .sticky-action { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); border-top-left-radius: 20px; border-top-right-radius: 20px; z-index: 1000; display: none; }
         
-        /* Изюминка: Виджет дефицита */
-        .status-bar { background: #fff; padding: 10px 20px; border-radius: 50px; display: inline-flex; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid #e0e0e0; }
-        .dot { height: 10px; width: 10px; background-color: #28a745; border-radius: 50%; display: inline-block; margin-right: 10px; animation: blink 1s infinite; }
-
-        /* Кнопки */
-        .btn-main { display: inline-block; background: var(--orange); color: #fff; padding: 18px 35px; border-radius: 5px; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3); transition: 0.3s; }
-        .btn-main:hover { background: #e65c00; transform: translateY(-2px); }
-
-        /* Сетка преимуществ */
-        .features { padding: 50px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .feature-item { background: #fff; padding: 30px; border-radius: 10px; border-bottom: 3px solid var(--blue); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .feature-item i { font-size: 40px; color: var(--blue); margin-bottom: 15px; }
-
-        /* Таблица сравнения */
-        .compare-table { width: 100%; border-collapse: collapse; background: #fff; margin: 40px 0; border-radius: 10px; overflow: hidden; }
-        .compare-table th, .compare-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
-        .compare-table th { background: var(--blue); color: #fff; }
-
-        /* Инструкция */
-        .steps { padding: 50px 0; background: var(--light-blue); }
-        .step-card { display: flex; align-items: center; margin-bottom: 20px; background: #fff; padding: 20px; border-radius: 10px; }
-        .step-num { font-size: 40px; font-weight: 700; color: var(--blue); margin-right: 25px; opacity: 0.3; }
-
         /* SEO текст */
-        .seo-section { padding: 50px 0; color: var(--text-light); font-size: 15px; }
-        .seo-section h2 { color: var(--text-dark); margin-bottom: 20px; }
+        .seo-content { font-size: 14px; color: #888; padding: 40px 0 100px; text-align: justify; }
 
-        footer { background: #222; color: #fff; padding: 40px 0; text-align: center; }
-
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-        @media (max-width: 768px) { .hero-text h1 { font-size: 28px; } }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        @media (min-width: 601px) { .sticky-action { display: none !important; } }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container nav-flex">
-        <a href="/" class="logo">PRO<span>MELORD</span>.RU</a>
-        <div style="font-weight: 500; font-size: 14px;">Официальный партнер сервиса</div>
+    <div class="container">
+        <a href="#" class="logo">PRO<span>MELORD</span></a>
     </div>
 </header>
 
 <section class="hero">
-    <div class="container hero-flex">
-        <div class="hero-text">
-            <div class="status-bar">
-                <span class="dot"></span> 
-                <span id="slots">Свободно тестовых аккаунтов: 7 из 10</span>
-            </div>
-            <h1>Стабильное IPTV за <mark>2 доллара</mark> в месяц: более 10 000 каналов</h1>
-            <p style="font-size: 18px; margin-bottom: 30px;">Получите доступ к премиальному телевидению MeLord (iLook TV) уже через 5 минут. Все мировые каналы в HD и 4K качестве.</p>
-            
-            <a href="ТВОЯ_ПАРТНЕРСКАЯ_ССЫЛКА" class="btn-main">ПОЛУЧИТЬ БЕСПЛАТНЫЙ ТЕСТ 24Ч</a>
-            
-            <div style="margin-top: 20px; display: flex; gap: 15px;">
-                <span><i class="fa-solid fa-check-circle" style="color: green;"></i> Без договоров</span>
-                <span><i class="fa-solid fa-check-circle" style="color: green;"></i> Без оборудования</span>
-            </div>
+    <div class="container">
+        <div class="badge"><i class="fa-solid fa-bolt"></i> МОМЕНТАЛЬНОЕ ПОДКЛЮЧЕНИЕ</div>
+        <h1>4500+ ТВ каналов в одном плейлисте за <mark>$2</mark></h1>
+        <p>Смотри футбол, кино и сериалы в 4K качестве. Попробуй прямо сейчас без оплаты!</p>
+        
+        <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn">ПОЛУЧИТЬ ТЕСТ 24 ЧАСА</a>
+        
+        <div class="test-timer">
+            <span class="dot"></span> Акция: Бесплатный доступ активен
         </div>
     </div>
 </section>
 
 <div class="container">
-    <div class="features">
-        <div class="feature-item">
-            <i class="fa-solid fa-tv"></i>
-            <h3>10,000+ Каналов</h3>
-            <p>От федеральных каналов до редких спортивных и кино-хитов со всего мира.</p>
+    <div class="stats">
+        <div class="stat-card">
+            <div>4500+</div>
+            <span>Каналов</span>
         </div>
-        <div class="feature-item">
-            <i class="fa-solid fa-history"></i>
-            <h3>Архив 7 дней</h3>
-            <p>Смотрите любимые передачи в удобное время. Пропустили матч? Просто отмотайте назад.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa-solid fa-bolt"></i>
-            <h3>Быстрое переключение</h3>
-            <p>Сервера в Москве, Европе и США обеспечивают моментальный отклик и стабильность.</p>
+        <div class="stat-card">
+            <div>7 дней</div>
+            <span>Архив ТВ</span>
         </div>
     </div>
 
-    <h2 style="text-align: center; margin-top: 40px;">Почему MeLord лучше бесплатного ТВ?</h2>
-    <table class="compare-table">
-        <thead>
-            <tr>
-                <th>Функция</th>
-                <th>Бесплатные листы</th>
-                <th>MeLord (iLook)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Качество картинки</td>
-                <td>SD / Тормоза</td>
-                <td>Full HD / 4K Ultra</td>
-            </tr>
-            <tr>
-                <td>Стабильность</td>
-                <td>Частые блокировки</td>
-                <td>Работа 24/7/365</td>
-            </tr>
-            <tr>
-                <td>Техподдержка</td>
-                <td>Отсутствует</td>
-                <td>Оперативная помощь</td>
-            </tr>
-            <tr>
-                <td>Цена</td>
-                <td>0 руб.</td>
-                <td>2$ (~190 руб)</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="benefits">
+        <div class="benefit-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <h4>Все устройства</h4>
+                <p>Работает на Smart TV, Android, iPhone, Windows и приставках.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <i class="fa-solid fa-star"></i>
+            <div>
+                <h4>Премиум качество</h4>
+                <p>Full HD и Ultra HD 4K контент без задержек и буферизации.</p>
+            </div>
+        </div>
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h4>Стабильность 99.9%</h4>
+                <p>Собственные сервера в РФ и Европе для бесперебойного вещания.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="payments">
+        <p style="margin-bottom: 10px; font-size: 12px; font-weight: 700;">ПРИНИМАЕМ К ОПЛАТЕ</p>
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-bitcoin"></i>
+        <p style="margin-top: 10px; font-size: 11px;">СБП / Мир / Криптовалюты</p>
+    </div>
+
+    <div class="seo-content">
+        <h3 style="color: #333; margin-bottom: 10px;">IPTV телевидение нового поколения</h3>
+        <p>Если вы ищете, где выгодно купить <b>IPTV плейлист</b>, MeLord — это идеальное решение. Мы собрали более <b>4500 каналов</b> со всего мира, включая спортивные (Матч Премьер, Setanta), детские и познавательные. Наш сервис оптимизирован для пользователей из <b>Москвы, Санкт-Петербурга, Новосибирска</b> и других городов России. Благодаря низкой стоимости в 2 доллара и возможности бесплатного тестирования на 24 часа, MeLord стал лидером рынка в 2026 году.</p>
+    </div>
 </div>
 
-<section class="steps">
-    <div class="container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Как подключиться за 3 шага</h2>
-        <div class="step-card">
-            <div class="step-num">01</div>
-            <div>
-                <h3>Регистрация</h3>
-                <p>Перейдите на официальный сайт MeLord по нашей ссылке и создайте аккаунт.</p>
-            </div>
-        </div>
-        <div class="step-card">
-            <div class="step-num">02</div>
-            <div>
-                <h3>Активация теста</h3>
-                <p>В личном кабинете нажмите "Попробовать бесплатно". Вам дадут 24 часа полного доступа.</p>
-            </div>
-        </div>
-        <div class="step-card">
-            <div class="step-num">03</div>
-            <div>
-                <h3>Наслаждайтесь просмотром</h3>
-                <p>Скачайте плейлист и вставьте его в любой плеер (TiviMate, OTT Navigator, Smart TV).</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="container seo-section">
-    <h2>Лучшее IPTV в Москве, Санкт-Петербурге и всей РФ</h2>
-    <p>Ищете стабильный <b>плейлист melord</b>? Наш сервис — это признанный лидер на рынке СНГ. Мы предлагаем не просто телевидение, а полноценный медиа-сервис. Если вы живете в <b>Центральной России, на Урале или в Сибири</b>, наши CDN-узлы обеспечат минимальный пинг и отсутствие буферизации.</p>
-    <p>Наш сайт <b>promelord.ru</b> создан для того, чтобы помочь пользователям быстро настроить просмотр на любых устройствах. Мы предлагаем актуальные зеркала и прямые ссылки на регистрацию в сервисе 2-долларового IPTV (бывший edem/ilook).</p>
-</section>
-
-<footer>
-    <div class="container">
-        <p>PROMELORD.RU — информационный портал об IPTV телевидении.</p>
-        <p style="opacity: 0.6; margin-top: 10px;">Все логотипы и товарные знаки принадлежат их правообладателям. Сервис предоставляется "как есть".</p>
-    </div>
-</footer>
+<div class="sticky-action" id="stickyBtn">
+    <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn" style="padding: 15px; font-size: 16px;">ПОПРОБОВАТЬ БЕСПЛАТНО</a>
+</div>
 
 <script>
-    // Скрипт для динамического изменения количества "свободных мест"
-    function updateSlots() {
-        const slots = document.getElementById('slots');
-        const num = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
-        slots.innerText = 'Свободно тестовых аккаунтов: ' + num + ' из 10';
-    }
-    setTimeout(updateSlots, 5000);
+    // Показываем липкую кнопку при скролле вниз
+    window.onscroll = function() {
+        const btn = document.getElementById("stickyBtn");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
 </script>
 
 </body>

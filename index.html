@@ -6,6 +6,8 @@
     <meta name="description" content="Ищете стабильный IPTV плейлист? MeLord IPTV — это 4500+ каналов, Full HD и 4K качество. Настрой свой IPTV playlist m3u за 5 минут. Бесплатный тест 24 часа!">
     <meta name="keywords" content="IPTV, IPTV плейлисты, IPTV playlist, m3u плейлист, скачать IPTV, бесплатное тв, iLook TV, MeLord, онлайн телевидение, смарт тв каналы">
     
+    <link rel="canonical" href="https://melord.net" />
+    
     <meta property="og:title" content="MeLord IPTV — Лучший IPTV плейлист 2026">
     <meta property="og:description" content="4500+ каналов в одном m3u плейлисте. Попробуй бесплатно 24 часа.">
     <meta property="og:image" content="https://github.com/ipchost/Melord/blob/main/favicon.png?raw=true">
@@ -16,16 +18,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "MeLord IPTV - Лучший IPTV плейлист 2026",
+      "image": "https://github.com/ipchost/Melord/blob/main/favicon.png?raw=true",
+      "description": "4500+ каналов, Full HD и 4K качество. Стабильный IPTV playlist m3u с архивом 7 дней.",
+      "brand": {
+        "@type": "Brand",
+        "name": "MeLord"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://melord.net",
+        "priceCurrency": "USD",
+        "price": "2.00",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Как скачать IPTV плейлист m3u?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Для получения IPTV плейлиста необходимо зарегистрироваться на официальном сайте MeLord, после чего в личном кабинете будет доступна прямая ссылка на самообновляемый m3u файл."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Есть ли бесплатный тест IPTV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да, сервис предоставляет бесплатный тестовый период на 24 часа для всех новых пользователей сразу после регистрации."
+        }
+      }]
+    }
+    </script>
+
     <style>
         :root { 
-            --primary: #0056b3; /* Фирменный синий Melord */
+            --primary: #0056b3; 
             --primary-hover: #ff00ea;
-            --dark-bg: #12141d; /* Темный фон как на сайте */
+            --dark-bg: #12141d; 
             --card-bg: #1c1f2a;
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --white: #ffffff;
-            --accent: #00d4ff; /* Светло-синий для акцентов */
+            --accent: #00d4ff; 
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,12 +89,11 @@
         
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         
-        /* Header */
         header { 
-            background: var(--dark-bg); 
-            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            background: transparent; 
             padding: 15px 0; 
-            position: sticky; 
+            position: absolute; 
+            width: 100%;
             top: 0; 
             z-index: 1000; 
         }
@@ -61,17 +110,33 @@
         .logo span { color: var(--primary); }
         .logo img { width: 30px; height: 30px; }
 
-        /* Hero Area */
         .hero { 
-            padding: 80px 0; 
-            background: radial-gradient(circle at top right, #1e2642, #12141d); 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0; 
+            background: linear-gradient(rgba(18, 20, 29, 0.5), rgba(18, 20, 29, 0.8)), 
+                        url('https://i.pinimg.com/originals/68/93/9d/68939d5e55dd29fc4fa31b5cb0f82ba6.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--white);
             text-align: center; 
         }
-        .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; margin-bottom: 20px; color: var(--white); }
-        .hero p { font-size: 18px; color: var(--text-muted); max-width: 750px; margin: 0 auto 30px; }
+        .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; margin-bottom: 20px; color: var(--white); text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
+        .hero p { font-size: 18px; color: #e0e0e0; max-width: 750px; margin: 0 auto 30px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         
-        /* Buttons */
+        .vpn-warning {
+            font-size: 14px; 
+            color: #ffcc00; 
+            margin-bottom: 20px;
+            background: rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
         .btn { 
             display: inline-block; 
             background: var(--primary); 
@@ -88,14 +153,12 @@
         .btn:hover { 
             background: var(--primary-hover); 
             transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); 
+            box-shadow: 0 6px 20px rgba(255, 0, 234, 0.4); 
         }
 
-        /* Section Titles */
         section { padding: 60px 0; }
         h2 { font-size: 28px; margin-bottom: 40px; text-align: center; font-weight: 800; color: #12141d; }
 
-        /* Features Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { 
             padding: 40px 30px; 
@@ -112,7 +175,6 @@
         .card i { font-size: 35px; color: var(--primary); margin-bottom: 20px; }
         .card h3 { margin-bottom: 10px; }
 
-        /* Categories Block */
         .categories-list { 
             background: var(--dark-bg); 
             color: var(--white); 
@@ -124,7 +186,6 @@
         .cat-item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: #e0e0e0; }
         .cat-item i { color: var(--accent); }
 
-        /* Setup Guides */
         .setup-steps { counter-reset: step; max-width: 800px; margin: 0 auto; }
         .step { display: flex; align-items: flex-start; gap: 25px; margin-bottom: 40px; }
         .step::before { 
@@ -144,27 +205,27 @@
         .step h4 { font-size: 20px; margin-bottom: 8px; color: #12141d; }
         .step a { color: var(--primary); text-decoration: none; font-weight: 600; }
 
-        /* FAQ */
         .faq-item { margin-bottom: 15px; background: #f8f9fa; border-radius: 12px; padding: 25px; border: 1px solid #eee; }
         .faq-item h4 { margin-bottom: 10px; color: var(--primary); font-size: 18px; }
 
         footer { background: #0a0c12; padding: 50px 0; text-align: center; color: #666; font-size: 14px; }
         footer p { margin-bottom: 10px; }
 
-        /* Badge */
         .promo-badge {
-            background: rgba(0, 123, 255, 0.15);
-            color: var(--accent);
+            background: rgba(0, 123, 255, 0.25);
+            color: #fff;
             padding: 10px 20px;
             border-radius: 50px;
             display: inline-block;
             margin-bottom: 25px;
             font-weight: 600;
             border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(5px);
         }
 
         @media (max-width: 768px) {
             .btn { width: 100%; }
+            .hero { background-attachment: scroll; }
             .hero h1 { font-size: 28px; }
             .categories-list { padding: 30px 20px; }
         }
@@ -175,10 +236,10 @@
 <header>
     <div class="container nav">
         <a href="#" class="logo">
-            <img src="https://github.com/ipchost/Melord/blob/main/favicon.png?raw=true" alt="MeLord Logo">
+            <img src="https://github.com/ipchost/Melord/blob/main/favicon.png?raw=true" alt="Логотип MeLord IPTV — лучший сервис плейлистов 2026">
             PRO<span>MELORD</span>
         </a>
-        <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn" style="padding: 10px 20px; font-size: 14px; box-shadow: none;">Регистрация</a>
+        <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn" style="padding: 10px 20px; font-size: 14px; box-shadow: none;" title="Включите VPN для регистрации">Регистрация</a>
     </div>
 </header>
 
@@ -187,29 +248,35 @@
         <div class="promo-badge">
             <i class="fa-solid fa-gift"></i> Бесплатный тест 24 часа доступен сразу!
         </div>
-        <h1>MeLord IPTV: 4500+ каналов за $2 в месяц</h1>
+        <h1>MeLord IPTV: скачать лучший IPTV плейлист m3u в 2026 году</h1>
         <p>Премиальное качество вещания на любом устройстве. Кино, спорт и детские каналы в 4K качестве с архивом на неделю.</p>
-        <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn">Зарегистрироваться и начать тест</a>
+        
+        <div class="vpn-warning">
+            <i class="fa-solid fa-circle-exclamation"></i> 
+            Для перехода на сайт из РФ используйте <strong>VPN</strong>
+        </div>
+        <br>
+        <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn" title="Регистрация и получение тестового IPTV плейлиста бесплатно">Зарегистрироваться и начать тест</a>
     </div>
 </section>
 
 <section class="container">
-    <h2>Почему выбирают сервис MeLord?</h2>
+    <h2>Преимущества нашего IPTV плейлиста</h2>
     <div class="grid">
         <div class="card">
             <i class="fa-solid fa-tv"></i>
-            <h3>4500+ каналов</h3>
-            <p>Огромный выбор контента со всего мира, включая локальные каналы РФ, СНГ и Европы в HD и 4K.</p>
+            <h3>4500+ IPTV каналов</h3>
+            <p>Огромный выбор контента со всего мира, включая локальные каналы РФ, СНГ и Европы в HD и 4K без буферизации.</p>
         </div>
         <div class="card">
             <i class="fa-solid fa-history"></i>
             <h3>Архив 7 дней</h3>
-            <p>Не успели на матч? Все записи хранятся неделю. Смотрите любимые передачи в удобное для вас время.</p>
+            <p>Не успели на матч? Все записи хранятся неделю. Смотрите любимые передачи в удобное для вас время через любой плеер.</p>
         </div>
         <div class="card">
             <i class="fa-solid fa-bolt"></i>
-            <h3>Мгновенный старт</h3>
-            <p>Никаких договоров и оборудования. Регистрация, настройка плеера и просмотр занимают не более 5 минут.</p>
+            <h3>Настройка IPTV плейлиста за 5 мин</h3>
+            <p>Поддержка протоколов HLS и M3U8. Мгновенная настройка на Smart TV, Android TV, ПК и Mag.</p>
         </div>
     </div>
 </section>
@@ -237,7 +304,7 @@
         <div class="step">
             <div>
                 <h4>Регистрация и Тест</h4>
-                <p>Создайте аккаунт на <a href="https://melord.net/welcome/signup/cb26f9e15332cb38">официальном сайте</a>. Тестовый период на 24 часа активируется автоматически.</p>
+                <p>Создайте аккаунт на <a href="https://melord.net/welcome/signup/cb26f9e15332cb38">официальном сайте</a> (не забудьте включить VPN). Тестовый период на 24 часа активируется автоматически.</p>
             </div>
         </div>
         <div class="step">
@@ -256,7 +323,7 @@
 </section>
 
 <section class="container" style="background: #fbfcfd; border-radius: 30px;">
-    <h2>Вопросы и ответы</h2>
+    <h2>Часто задаваемые вопросы про IPTV плейлисты и настройку</h2>
     <div class="faq-item">
         <h4>На скольких устройствах работает одна подписка?</h4>
         <p>Вы можете смотреть ТВ на 2-х любых устройствах одновременно в рамках одной домашней сети (один IP).</p>
@@ -266,21 +333,26 @@
         <p>Доступны все современные способы: СБП, карты РФ и Мира, Криптовалюты (USDT, BTC) и платежные системы.</p>
     </div>
     <div class="faq-item">
-        <h4>Есть ли техническая поддержка?</h4>
-        <p>Да, в личном кабинете работает система тикетов, где специалисты помогут вам с настройкой оборудования.</p>
+        <h4>Почему не открывается сайт регистрации?</h4>
+        <p>Официальный сайт сервиса может блокироваться на территории РФ. Для успешной регистрации рекомендуем использовать любой VPN (Нидерланды, Германия, Польша).</p>
     </div>
 </section>
 
 <section class="container" style="text-align: center; padding-bottom: 100px;">
     <h2 style="margin-bottom: 20px;">Готовы к новому качеству ТВ?</h2>
-    <p style="margin-bottom: 40px; color: #666; font-size: 18px;">Присоединяйтесь к MeLord сегодня и забудьте о дорогом кабельном ТВ.</p>
-    <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn">Попробовать бесплатно 24ч</a>
+    <p style="margin-bottom: 20px; color: #666; font-size: 18px;">Присоединяйтесь к MeLord сегодня и забудьте о дорогом кабельном ТВ.</p>
+    <div class="vpn-warning" style="color: #666; background: none; border: 1px solid #ddd; font-weight: normal;">
+        Внимание: сайт регистрации открывается через <strong>VPN</strong>
+    </div>
+    <br>
+    <a href="https://melord.net/welcome/signup/cb26f9e15332cb38" class="btn" title="Открыть сайт через VPN и начать тест">Попробовать бесплатно 24ч</a>
 </section>
 
 <footer>
     <div class="container">
         <p><strong>PROMELORD</strong> — Информационный ресурс о сервисе MeLord IPTV.</p>
-        <p style="opacity: 0.5;">Сайт носит ознакомительный характер. Мы предоставляем актуальные ссылки для доступа к личному кабинету. 2026.</p>
+        <h4 style="font-size: 14px; margin-bottom: 10px; color: #444; font-weight: normal;">Нас ищут по запросам: IPTV playlist 2026, m3u плейлисты скачать бесплатно, iLook TV зеркало, MeLord регистрация.</h4>
+        <p style="opacity: 0.3; font-size: 10px; margin-top: 20px;">Доступно в Москве, СПб, Киеве, Минске, Астане и по всему миру. Поддержка всех провайдеров интернета.</p>
     </div>
 </footer>
 

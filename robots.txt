@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://promelord.ru/sitemap.xml
